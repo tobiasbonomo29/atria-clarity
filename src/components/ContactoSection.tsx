@@ -1,25 +1,6 @@
-import { useState } from "react";
 import { MessageCircle, Mail, Clock, MapPin } from "lucide-react";
 
 const ContactoSection = () => {
-  const [formData, setFormData] = useState({
-    nombre: "",
-    email: "",
-    telefono: "",
-    tipoSeguro: "",
-    mensaje: "",
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Placeholder: integrar con Zoho Web-to-Lead
-    alert("¡Gracias! Nos pondremos en contacto contigo pronto.");
-  };
-
   return (
     <section id="contacto" className="py-20 lg:py-28 relative">
       <div className="absolute inset-0 bg-secondary/30 pointer-events-none" />
@@ -34,103 +15,130 @@ const ContactoSection = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {/* Form — Zoho Web-to-Lead ready */}
-          <form onSubmit={handleSubmit} className="glass-card p-8 space-y-5">
-            <div>
-              <label htmlFor="nombre" className="block text-sm font-medium text-foreground mb-1.5">
-                Nombre
-              </label>
-              <input
-                type="text"
-                id="nombre"
-                name="nombre"
-                value={formData.nombre}
-                onChange={handleChange}
-                required
-                maxLength={100}
-                className="w-full px-4 py-3 rounded-lg bg-muted border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
-                placeholder="Tu nombre completo"
-              />
-            </div>
+          {/* ====== ZOHO WEB-TO-LEAD FORM START ====== */}
+          <form
+            action="https://crm.zoho.com/crm/WebToLeadForm"
+            method="POST"
+            name="WebToLeadForm"
+            acceptCharset="UTF-8"
+            className="glass-card p-8 space-y-5"
+          >
+            {/* ZOHO WEB-TO-LEAD START */}
+            {/* Pegar aquí el action y hidden fields de Zoho */}
+            {/* Ejemplo:
+            <input type="hidden" name="xnQsjsdp" value="TU_CODIGO_DE_ZOHO" />
+            <input type="hidden" name="zc_gad" value="" />
+            <input type="hidden" name="xmIwtLD" value="TU_CODIGO_DE_ZOHO" />
+            <input type="hidden" name="actionType" value="TGVhZHM=" />
+            <input type="hidden" name="returnURL" value="https://TU_USERNAME.github.io/atria-one-seguros/" />
+            */}
+            {/* ZOHO WEB-TO-LEAD END */}
+
             <div className="grid sm:grid-cols-2 gap-5">
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-foreground mb-1.5">
-                  Email
+                <label htmlFor="First_Name" className="block text-sm font-medium text-foreground mb-1.5">
+                  Nombre
+                </label>
+                <input
+                  type="text"
+                  id="First_Name"
+                  name="First Name"
+                  maxLength={40}
+                  className="w-full px-4 py-3 rounded-lg bg-muted border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+                  placeholder="Tu nombre"
+                />
+              </div>
+              <div>
+                <label htmlFor="Last_Name" className="block text-sm font-medium text-foreground mb-1.5">
+                  Apellido *
+                </label>
+                <input
+                  type="text"
+                  id="Last_Name"
+                  name="Last Name"
+                  required
+                  maxLength={80}
+                  className="w-full px-4 py-3 rounded-lg bg-muted border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+                  placeholder="Tu apellido"
+                />
+              </div>
+            </div>
+
+            <div className="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label htmlFor="Email" className="block text-sm font-medium text-foreground mb-1.5">
+                  Email *
                 </label>
                 <input
                   type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
+                  id="Email"
+                  name="Email"
                   required
-                  maxLength={255}
+                  maxLength={100}
                   className="w-full px-4 py-3 rounded-lg bg-muted border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
                   placeholder="tu@email.com"
                 />
               </div>
               <div>
-                <label htmlFor="telefono" className="block text-sm font-medium text-foreground mb-1.5">
+                <label htmlFor="Phone" className="block text-sm font-medium text-foreground mb-1.5">
                   Teléfono
                 </label>
                 <input
                   type="tel"
-                  id="telefono"
-                  name="telefono"
-                  value={formData.telefono}
-                  onChange={handleChange}
-                  maxLength={20}
+                  id="Phone"
+                  name="Phone"
+                  maxLength={30}
                   className="w-full px-4 py-3 rounded-lg bg-muted border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
                   placeholder="+56 9 1234 5678"
                 />
               </div>
             </div>
+
             <div>
-              <label htmlFor="tipoSeguro" className="block text-sm font-medium text-foreground mb-1.5">
+              <label htmlFor="LEADCF1" className="block text-sm font-medium text-foreground mb-1.5">
                 Tipo de seguro
               </label>
               <select
-                id="tipoSeguro"
-                name="tipoSeguro"
-                value={formData.tipoSeguro}
-                onChange={handleChange}
+                id="LEADCF1"
+                name="LEADCF1"
                 className="w-full px-4 py-3 rounded-lg bg-muted border border-border text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
               >
                 <option value="">Seleccionar...</option>
-                <option value="automotriz">Seguro Automotriz</option>
-                <option value="hogar">Seguro Hogar</option>
-                <option value="vida">Seguro Vida</option>
-                <option value="salud">Seguro Salud</option>
-                <option value="viajes">Viajes</option>
-                <option value="empresas">Empresas / Pyme</option>
-                <option value="accidentes">Accidentes Personales</option>
-                <option value="mascotas">Mascotas</option>
-                <option value="otro">Otro</option>
+                <option value="Seguro Automotriz">Seguro Automotriz</option>
+                <option value="Seguro Hogar">Seguro Hogar</option>
+                <option value="Seguro Vida">Seguro Vida</option>
+                <option value="Seguro Salud">Seguro Salud</option>
+                <option value="Viajes">Viajes</option>
+                <option value="Empresas / Pyme">Empresas / Pyme</option>
+                <option value="Accidentes Personales">Accidentes Personales</option>
+                <option value="Mascotas">Mascotas</option>
+                <option value="Otro">Otro</option>
               </select>
             </div>
+
             <div>
-              <label htmlFor="mensaje" className="block text-sm font-medium text-foreground mb-1.5">
+              <label htmlFor="Description" className="block text-sm font-medium text-foreground mb-1.5">
                 Mensaje
               </label>
               <textarea
-                id="mensaje"
-                name="mensaje"
-                value={formData.mensaje}
-                onChange={handleChange}
+                id="Description"
+                name="Description"
                 rows={4}
-                maxLength={1000}
+                maxLength={32000}
                 className="w-full px-4 py-3 rounded-lg bg-muted border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all resize-none"
                 placeholder="Cuéntanos qué necesitas..."
               />
             </div>
+
             <button
               type="submit"
               className="w-full py-3.5 rounded-lg text-base font-semibold text-accent-foreground transition-all duration-200 hover:opacity-90 hover:scale-[1.02]"
               style={{ background: "var(--gradient-accent)" }}
             >
-              Enviar
+              Enviar Cotización
             </button>
           </form>
+          {/* ====== ZOHO WEB-TO-LEAD FORM END ====== */}
 
           {/* Contact info */}
           <div className="glass-card p-8 flex flex-col gap-6 justify-center">
