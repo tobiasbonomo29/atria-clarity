@@ -1,6 +1,22 @@
 import { MessageCircle, Mail, Clock, MapPin } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const ContactoSection = () => {
+  const [showSuccess, setShowSuccess] = useState(false);
+
+  useEffect(() => {
+    // Verificar si viene de Zoho con éxito
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('gracias') === 'true') {
+      setShowSuccess(true);
+      // Limpiar URL después de 5 segundos
+      setTimeout(() => {
+        window.history.replaceState({}, '', window.location.pathname);
+        setShowSuccess(false);
+      }, 5000);
+    }
+  }, []);
+
   return (
     <section id="contacto" className="py-20 lg:py-28 relative">
       <div className="absolute inset-0 bg-secondary/30 pointer-events-none" />
@@ -13,6 +29,23 @@ const ContactoSection = () => {
             ¿Listo para cotizar? Escríbenos o completa el formulario.
           </p>
         </div>
+
+        {/* Mensaje de éxito */}
+        {showSuccess && (
+          <div className="max-w-2xl mx-auto mb-8 p-6 rounded-lg bg-primary/10 border-2 border-primary/30 animate-fade-up">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+                <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-foreground">¡Gracias por contactarnos!</h3>
+                <p className="text-sm text-muted-foreground">Tu mensaje ha sido enviado. Nos pondremos en contacto contigo pronto.</p>
+              </div>
+            </div>
+          </div>
+        )}
 
         <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {/* ====== ZOHO WEB-TO-LEAD FORM START ====== */}
@@ -30,7 +63,7 @@ const ContactoSection = () => {
             <input type="hidden" name="zc_gad" id="zc_gad" value="" />
             <input type="text" style={{ display: 'none' }} name="xmIwtLD" value="14681b5f694bbd3692242fa31d8e55f85515d85140350911f6496b87e23ed2f9242b0c546fb19777c86b836576597d7c" />
             <input type="text" style={{ display: 'none' }} name="actionType" value="TGVhZHM=" />
-            <input type="text" style={{ display: 'none' }} name="returnURL" value="https://tobiasbonomo29.github.io/atria-clarity/" />
+            <input type="text" style={{ display: 'none' }} name="returnURL" value="https://tobiasbonomo29.github.io/atria-clarity/?gracias=true" />
             <input type="text" style={{ display: 'none' }} name="aG9uZXlwb3Q" value="" />
 
             <div>
