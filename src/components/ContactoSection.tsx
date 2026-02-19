@@ -81,19 +81,35 @@ const ContactoSection = () => {
               </select>
             </div>
 
-            <div>
-              <label htmlFor="Last_Name" className="block text-sm font-medium text-foreground mb-1.5">
-                Apellidos *
-              </label>
-              <input
-                type="text"
-                id="Last_Name"
-                name="Last Name"
-                required
-                maxLength={80}
-                className="w-full px-4 py-3 rounded-lg bg-muted border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
-                placeholder="Tus apellidos"
-              />
+            <div className="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label htmlFor="First_Name" className="block text-sm font-medium text-foreground mb-1.5">
+                  Nombre *
+                </label>
+                <input
+                  type="text"
+                  id="First_Name"
+                  name="First Name"
+                  required
+                  maxLength={40}
+                  className="w-full px-4 py-3 rounded-lg bg-muted border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+                  placeholder="Tu nombre"
+                />
+              </div>
+              <div>
+                <label htmlFor="Last_Name" className="block text-sm font-medium text-foreground mb-1.5">
+                  Apellidos *
+                </label>
+                <input
+                  type="text"
+                  id="Last_Name"
+                  name="Last Name"
+                  required
+                  maxLength={80}
+                  className="w-full px-4 py-3 rounded-lg bg-muted border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+                  placeholder="Tus apellidos"
+                />
+              </div>
             </div>
 
             <div className="grid sm:grid-cols-2 gap-5">
@@ -180,14 +196,14 @@ const ContactoSection = () => {
                 <MessageCircle size={22} className="text-primary mt-0.5" />
                 <div>
                   <p className="text-sm font-medium text-foreground">WhatsApp</p>
-                  <p className="text-sm text-muted-foreground">+56 9 0000 0000</p>
+                  <p className="text-sm text-muted-foreground">+56 9 3038 3405</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <Mail size={22} className="text-primary mt-0.5" />
                 <div>
                   <p className="text-sm font-medium text-foreground">Email</p>
-                  <p className="text-sm text-muted-foreground">contacto@atriaone.cl</p>
+                  <p className="text-sm text-muted-foreground">carnedillo@atriaseguros.cl</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -206,7 +222,7 @@ const ContactoSection = () => {
               </div>
             </div>
             <a
-              href="https://wa.me/56900000000"
+              href="https://wa.me/56930383405"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-4 flex items-center justify-center gap-2 w-full py-3.5 rounded-lg text-base font-semibold border-2 border-primary text-primary hover:bg-primary/10 transition-all duration-200"
@@ -238,8 +254,8 @@ const ContactoSection = () => {
           }
 
           function checkMandatory7089296000000668409() {
-            var mndFileds = new Array('Last Name', 'Email', 'Mobile', 'LEADCF1', 'LEADCF2');
-            var fldLangVal = new Array('Apellidos', 'Correo electrónico', 'Móvil', 'Tipo de cliente', 'Tipo de seguro');
+            var mndFileds = new Array('First Name', 'Last Name', 'Email', 'Mobile', 'LEADCF1', 'LEADCF2');
+            var fldLangVal = new Array('Nombre', 'Apellidos', 'Correo electrónico', 'Móvil', 'Tipo de cliente', 'Tipo de seguro');
             
             for (var i = 0; i < mndFileds.length; i++) {
               var fieldObj = document.forms['WebToLeads7089296000000668409'][mndFileds[i]];

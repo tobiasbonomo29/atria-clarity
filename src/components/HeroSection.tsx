@@ -32,7 +32,7 @@ const HeroSection = () => {
               Cotizar
             </a>
             <a
-              href="https://wa.me/56900000000"
+              href="https://wa.me/56930383405"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg text-base font-semibold border border-primary/40 text-primary hover:bg-primary/10 transition-all duration-200"
