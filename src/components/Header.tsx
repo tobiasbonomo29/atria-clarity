@@ -38,7 +38,8 @@ const Header = () => {
           <img 
             src={logo} 
             alt="Atria One Seguros" 
-            className="h-10 lg:h-12 w-auto object-contain"
+            className="h-28 lg:h-32 w-auto object-contain rounded-lg"
+            style={{ backgroundColor: 'hsl(204 70% 15%)' }}
           />
         </a>
 

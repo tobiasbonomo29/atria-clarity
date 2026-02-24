@@ -1,5 +1,5 @@
 import { MessageCircle } from "lucide-react";
-import heroImage from "@/assets/hero-abstract.png";
+import heroImage from "@/assets/hero-insurance-agent.jpg";
 
 const HeroSection = () => {
   return (
@@ -47,8 +47,8 @@ const HeroSection = () => {
         <div className="hidden lg:flex justify-center animate-fade-up-delay-3">
           <img
             src={heroImage}
-            alt="Formas abstractas representando protección digital"
-            className="w-full max-w-lg rounded-3xl"
+            alt="Ejecutiva de seguros profesional"
+            className="w-full max-w-lg rounded-3xl shadow-2xl"
             style={{ animation: "float 6s ease-in-out infinite" }}
           />
         </div>
