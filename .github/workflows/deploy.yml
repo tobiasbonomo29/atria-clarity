@@ -32,6 +32,10 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          VITE_NOTION_API_KEY: ${{ secrets.VITE_NOTION_API_KEY }}
+          VITE_NOTION_BLOG_DATABASE_ID: ${{ secrets.VITE_NOTION_BLOG_DATABASE_ID }}
+          VITE_NOTION_FAQ_DATABASE_ID: ${{ secrets.VITE_NOTION_FAQ_DATABASE_ID }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

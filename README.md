@@ -2,6 +2,14 @@
 
 Landing page de seguros profesional construida con React + Vite + TypeScript + Tailwind CSS + shadcn/ui.
 
+**✨ Características:**
+- 🎨 Diseño glassmorphic moderno con tema azul navy
+- 📱 100% responsive
+- 🚀 Deploy automático a GitHub Pages
+- 📝 **Gestión de contenido con Notion CMS** (Blog + FAQs)
+- 📬 Formulario integrado con Zoho CRM
+- ⚡ Optimizado para rendimiento
+
 ## 🚀 Quick Start
 
 ### Desarrollo Local
@@ -10,13 +18,17 @@ Landing page de seguros profesional construida con React + Vite + TypeScript + T
 # 1. Instalar dependencias
 npm install
 
-# 2. Iniciar servidor de desarrollo (http://localhost:8080)
+# 2. (Opcional) Configurar Notion CMS
+# Copia .env.example a .env y configura tus credenciales
+cp .env.example .env
+
+# 3. Iniciar servidor de desarrollo (http://localhost:8080)
 npm run dev
 
-# 3. Buildear para producción
+# 4. Buildear para producción
 npm run build
 
-# 4. Preview del build local
+# 5. Preview del build local
 npm run preview
 ```
 
@@ -32,22 +44,36 @@ npm run test        # Tests con Vitest
 npm run test:watch  # Tests en watch mode
 ```
 
+## 📝 Gestión de Contenido con Notion
+
+El sitio puede consumir contenido desde Notion de forma dinámica:
+
+- **Blog**: Posts de blog con título, resumen, contenido e imágenes
+- **FAQs**: Preguntas frecuentes organizadas por orden
+
+**Ver guía completa:** [NOTION_SETUP.md](./NOTION_SETUP.md)
+
+**Modo Fallback:** Si Notion no está configurado, el sitio usa contenido estático local.
+
 ## 📦 Deploy a GitHub Pages
 
 ### Configuración Inicial (una sola vez)
 
 1. **En GitHub**: Ve a tu repositorio → Settings → Pages
 2. **Source**: Selecciona "GitHub Actions" (no "Deploy from branch")
-3. **Push a main**: El workflow `.github/workflows/deploy.yml` se ejecutará automáticamente
+3. **(Opcional) Configurar Notion en producción**:
+   - Ve a Settings → Secrets and variables → Actions
+   - Agrega los secretos: `VITE_NOTION_API_KEY`, `VITE_NOTION_BLOG_DATABASE_ID`, `VITE_NOTION_FAQ_DATABASE_ID`
+4. **Push a main**: El workflow `.github/workflows/deploy.yml` se ejecutará automáticamente
 
 ### Deploy Automático
 
 Cada `push` a la rama `main` dispara el workflow de GitHub Actions que:
 - Instala dependencias
-- Buildea el proyecto
+- Buildea el proyecto (con variables de Notion si están configuradas)
 - Despliega a GitHub Pages
 
-Tu sitio estará disponible en: `https://TU_USERNAME.github.io/atria-one-seguros/`
+Tu sitio estará disponible en: `https://TU_USERNAME.github.io/atria-clarity/`
 
 ### Configuración Manual del Base Path
 
