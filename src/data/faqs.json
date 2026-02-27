@@ -5,5 +5,12 @@
     "answer": "Solo tu RUT yt datos basicos",
     "order": 1,
     "published": true
+  },
+  {
+    "id": "3140057b-cacb-80db-ab8e-c42be4e09065",
+    "question": "ESTA ES LA PRUEBA NUMERO 2",
+    "answer": "PRUEBA 2 DESDE GIT PAGES BOTON",
+    "order": 2,
+    "published": true
   }
 ]
