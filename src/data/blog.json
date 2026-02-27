@@ -1,19 +1,11 @@
 [
   {
-    "id": "3140057b-cacb-803b-97f1-c2d13417d7ab",
-    "title": "esta es la prueba 2 ",
-    "excerpt": "jijiji",
-    "content": "poreuba 2",
+    "id": "3140057b-cacb-80b5-a9b1-d43b4a009343",
+    "title": "PRUEBA 1",
+    "excerpt": "ESTA ES LA PRUEBA NUMERO 1",
+    "content": "ESTE ES EL CONTENIDO DE LA PRUEBA 1",
     "date": "2026-02-27",
-    "image": "https://www.espn.com.ar/futbol/equipo/_/id/18/san-lorenzo",
-    "published": true
-  },
-  {
-    "id": "3140057b-cacb-808c-9706-c9ab7dffa33a",
-    "title": "Que seguro de auto necesitas?",
-    "excerpt": "aaa",
-    "content": "hola prueba 1",
-    "date": "2026-02-27",
+    "image": "https://www.sanlorenzodeamerica.com.ar/futbol/el-escudo-de-san-lorenzo-dentro-de-los-100-mas-lindos-del-mundo/",
     "published": true
   }
 ]
