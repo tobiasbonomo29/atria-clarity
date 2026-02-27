@@ -1,0 +1,19 @@
+[
+  {
+    "id": "3140057b-cacb-803b-97f1-c2d13417d7ab",
+    "title": "esta es la prueba 2 ",
+    "excerpt": "jijiji",
+    "content": "poreuba 2",
+    "date": "2026-02-27",
+    "image": "https://www.espn.com.ar/futbol/equipo/_/id/18/san-lorenzo",
+    "published": true
+  },
+  {
+    "id": "3140057b-cacb-808c-9706-c9ab7dffa33a",
+    "title": "Que seguro de auto necesitas?",
+    "excerpt": "aaa",
+    "content": "hola prueba 1",
+    "date": "2026-02-27",
+    "published": true
+  }
+]
