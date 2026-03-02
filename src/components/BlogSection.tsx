@@ -39,6 +39,7 @@ const formatDate = (dateString: string) => {
 
 const BlogSection = () => {
   const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
+  const [showAllPosts, setShowAllPosts] = useState(false);
 
   // Intentar obtener posts desde Notion
   const { data: notionPosts } = useQuery({
@@ -49,6 +50,7 @@ const BlogSection = () => {
 
   // Usar posts de Notion si están disponibles, sino usar fallback
   const posts = notionPosts && notionPosts.length > 0 ? notionPosts : fallbackPosts;
+  const displayedPosts = showAllPosts ? posts : posts.slice(0, 3);
 
   return (
     <section id="blog" className="py-20 lg:py-28 relative">
@@ -64,7 +66,7 @@ const BlogSection = () => {
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {posts.slice(0, 3).map((post) => (
+          {displayedPosts.map((post) => (
             <article key={post.id} className="glass-card-hover overflow-hidden flex flex-col">
               {/* Image */}
               {post.image ? (
@@ -92,12 +94,12 @@ const BlogSection = () => {
 
         {posts.length > 3 && (
           <div className="text-center mt-10">
-            <a
-              href="#contacto"
+            <button
+              onClick={() => setShowAllPosts(!showAllPosts)}
               className="inline-flex items-center px-6 py-3 rounded-lg border border-border text-sm font-medium text-muted-foreground hover:text-foreground hover:border-primary/40 transition-all duration-200"
             >
-              Ver más artículos
-            </a>
+              {showAllPosts ? "Mostrar menos artículos" : "Ver más artículos"}
+            </button>
           </div>
         )}
       </div>
