@@ -59,12 +59,14 @@ const ContactoSection = () => {
             className="glass-card p-8 space-y-5"
           >
             {/* Campos Hidden de Zoho */}
-            <input type="text" style={{ display: 'none' }} name="xnQsjsdp" value="fa835586eb169c242b4e458eb201272dbe445d0cccfa9f53db9b31da5318ee99" />
+            <input type="text" style={{ display: 'none' }} name="xnQsjsdp" value="0ca26d120b7e37970043238b631b4e71aec2858afe7a66a106a2d4fe88193221" />
             <input type="hidden" name="zc_gad" id="zc_gad" value="" />
-            <input type="text" style={{ display: 'none' }} name="xmIwtLD" value="14681b5f694bbd3692242fa31d8e55f85515d85140350911f6496b87e23ed2f9242b0c546fb19777c86b836576597d7c" />
+            <input type="text" style={{ display: 'none' }} name="xmIwtLD" value="ad365eea5d2bf27d31db0d62a8f0320189697f8d9af715402607490b27aae4997a802a0b2d102022ce2ccc44be58a0ab" />
             <input type="text" style={{ display: 'none' }} name="actionType" value="TGVhZHM=" />
             <input type="text" style={{ display: 'none' }} name="returnURL" value="https://tobiasbonomo29.github.io/atria-clarity/?gracias=true" />
             <input type="text" style={{ display: 'none' }} name="aG9uZXlwb3Q" value="" />
+            {/* Fuente de Lead oculta - siempre "Sitio Web Atria Seguros" */}
+            <input type="hidden" name="Lead Source" value="Sitio Web Atria Seguros" />
 
             <div>
               <label htmlFor="LEADCF1" className="block text-sm font-medium text-foreground mb-1.5">
@@ -254,8 +256,8 @@ const ContactoSection = () => {
           }
 
           function checkMandatory7089296000000668409() {
-            var mndFileds = new Array('First Name', 'Last Name', 'Email', 'Mobile', 'LEADCF1', 'LEADCF2');
-            var fldLangVal = new Array('Nombre', 'Apellidos', 'Correo electrónico', 'Móvil', 'Tipo de cliente', 'Tipo de seguro');
+            var mndFileds = new Array('Last Name', 'Email', 'Mobile', 'LEADCF1', 'LEADCF2');
+            var fldLangVal = new Array('Apellidos', 'Correo electrónico', 'Móvil', 'Tipo de cliente', 'Tipo de seguro');
             
             for (var i = 0; i < mndFileds.length; i++) {
               var fieldObj = document.forms['WebToLeads7089296000000668409'][mndFileds[i]];
