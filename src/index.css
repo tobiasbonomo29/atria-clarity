@@ -6,22 +6,22 @@
 
 @layer base {
   :root {
-    --background: 204 70% 15%;
+    --background: 205 100% 11%;
     --foreground: 210 25% 95%;
 
-    --card: 204 65% 18%;
+    --card: 205 80% 14%;
     --card-foreground: 210 25% 95%;
 
-    --popover: 204 65% 18%;
+    --popover: 205 80% 14%;
     --popover-foreground: 210 25% 95%;
 
     --primary: 199 89% 48%;
     --primary-foreground: 210 25% 98%;
 
-    --secondary: 204 60% 22%;
+    --secondary: 205 70% 17%;
     --secondary-foreground: 210 25% 90%;
 
-    --muted: 204 55% 20%;
+    --muted: 205 65% 15%;
     --muted-foreground: 200 15% 60%;
 
     --accent: 25 85% 55%;
@@ -30,13 +30,13 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 204 50% 25%;
-    --input: 204 50% 25%;
+    --border: 205 60% 20%;
+    --input: 205 60% 20%;
     --ring: 199 89% 48%;
 
     --radius: 0.75rem;
 
-    --sidebar-background: 204 70% 17%;
+    --sidebar-background: 205 100% 11%;
     --sidebar-foreground: 210 25% 90%;
     --sidebar-primary: 199 89% 48%;
     --sidebar-primary-foreground: 210 25% 98%;
@@ -46,13 +46,13 @@
     --sidebar-ring: 199 89% 48%;
 
     /* Custom tokens */
-    --glass: 204 60% 20%;
-    --glass-border: 204 50% 30%;
+    --glass: 205 80% 14%;
+    --glass-border: 205 60% 22%;
     --copper: 25 85% 55%;
     --copper-glow: 25 90% 65%;
     --electric: 199 89% 48%;
     --electric-glow: 199 95% 60%;
-    --gradient-hero: linear-gradient(135deg, hsl(204 70% 13%), hsl(204 70% 18%), hsl(204 65% 16%));
+    --gradient-hero: linear-gradient(135deg, hsl(205 100% 9%), hsl(205 100% 11%), hsl(205 90% 13%));
     --gradient-cta: linear-gradient(135deg, hsl(199 89% 48%), hsl(199 95% 55%));
     --gradient-accent: linear-gradient(135deg, hsl(25 85% 55%), hsl(25 90% 65%));
     --shadow-glass: 0 8px 32px hsl(204 70% 10% / 0.4);

@@ -28,8 +28,8 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-background/80 backdrop-blur-xl border-b border-border shadow-lg"
-          : "bg-transparent"
+          ? "bg-[#002037]/95 backdrop-blur-xl border-b border-border shadow-lg"
+          : "bg-[#002037]/70 backdrop-blur-sm"
       }`}
     >
       <div className="container mx-auto flex items-center justify-between px-4 py-3 lg:py-4">
@@ -39,7 +39,7 @@ const Header = () => {
             src={logo} 
             alt="Atria One Seguros" 
             className="h-28 lg:h-32 w-auto object-contain rounded-lg"
-            style={{ backgroundColor: 'hsl(204 70% 15%)' }}
+            style={{ backgroundColor: '#002037' }}
           />
         </a>
 
@@ -49,7 +49,7 @@ const Header = () => {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+              className="text-sm font-medium text-white/90 hover:text-white transition-colors duration-200 drop-shadow-sm"
             >
               {link.label}
             </a>
@@ -66,7 +66,7 @@ const Header = () => {
         {/* Mobile toggle */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="lg:hidden p-2 text-foreground"
+          className="lg:hidden p-2 text-white drop-shadow-sm"
           aria-label="Menú"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -75,7 +75,7 @@ const Header = () => {
 
       {/* Mobile drawer */}
       {isOpen && (
-        <div className="lg:hidden bg-background/95 backdrop-blur-xl border-t border-border animate-fade-up">
+        <div className="lg:hidden bg-[#002037]/98 backdrop-blur-xl border-t border-border animate-fade-up">
           <nav className="container mx-auto px-4 py-4 flex flex-col gap-3">
             {navLinks.map((link) => (
               <a
